@@ -153,6 +153,7 @@ const handleSizeChange = (val) => {
     page.pageSize = val
     getCompanyList()
 }
+
 </script>
 <template>
    <PanelHead :meta="route.meta"/>
