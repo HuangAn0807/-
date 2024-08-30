@@ -11,8 +11,12 @@ export const useUserStore = defineStore('user',() => {
   const setToken = (value) => {
       token.value = value
     }
+    const removeToken = () => {
+      token.value = ''
+      localStorage.clear()
+    }
   const setUserInfo = (userObj) => {
       user.value = userObj
   }
-    return {token,setToken,setUserInfo,user}
+    return {token,setToken,setUserInfo,user,removeToken}
 },{persist:true})

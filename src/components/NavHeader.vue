@@ -31,7 +31,7 @@
   // 退出登录
   const exitLogin = () => {
     // 删除token并且跳转到登录页
-    userStore.setToken('')
+    userStore.removeToken()
     userStore.setUserInfo({})
     menuStore.removeMenuList()
     router.push('/login')

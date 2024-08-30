@@ -54,6 +54,7 @@ export const useMenuStore = defineStore('menu',() => {
   // 删除动态路由信息
   const removeMenuList = () => {
     menuList.value = null
+    localStorage.clear()
   }
 
   // 更新高亮下标
