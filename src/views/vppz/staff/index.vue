@@ -52,6 +52,9 @@ const rules = {
 // 选择头像弹窗的显示与隐藏
 const dialogImgVisible = ref(false)
 
+// 弹窗标题
+const title = ref('') 
+
 // 选中的头像下标
 const selectIndex = ref(0)
 
@@ -86,6 +89,7 @@ const confirmImg = () => {
 
 // 打开弹窗后执行的函数
 const open = () => {
+  title.value = '新增陪护师'
   dialogVisible.value = true
 }
 
@@ -114,6 +118,7 @@ const confirm =async () => {
 
 // 编辑陪护师 点击后将当前行数据赋值给表单用于回显数据
 const editCompany = (row) => {
+  title.value = '编辑陪护师'
   dialogVisible.value = true
   form.value = row
 }
@@ -245,7 +250,7 @@ const handleSizeChange = (val) => {
   <!-- 弹窗 -->
   <el-dialog 
     v-model="dialogVisible"
-    title="添加陪护师"
+    :title="title"
     width="500"
     :before-close="beforeClose"
     >

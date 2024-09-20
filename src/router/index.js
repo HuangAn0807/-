@@ -18,11 +18,11 @@ const router = createRouter({
         const menuStore = useMenuStore()
         // 如果有子菜单的情况
         if(menuStore.menuList){    
-          const children = menuStore.menuList[0].children
+          const children = menuStore?.menuList[0].children
           if(children){
             return children[0].meta.path
           }else{
-            return menuStore.menuList[0].meta.path
+            return menuStore?.menuList[0].meta.path
           }
       }else{
           return '/login'
